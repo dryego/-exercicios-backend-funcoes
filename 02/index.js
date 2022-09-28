@@ -23,18 +23,19 @@ const carro = {
         if (this.ligado === false) {
             console.log("Não é possível acelerar um carro desligado");
         } else {
-            this.velocidade = 10;
+            this.velocidade += 10;
+
         }
         // const acelera = this.ligado === false ? "Não é possível acelerar um carro desligado" : this.velocidade = 10;
         // console.log(acelera);
     },
     desacelerar: function () {
-        // if (this.ligado === false) {
-        //     console.log("Não é possível desacelerar um carro desligado.");
-        // } else {
-        //     this.velocidade -= 10;
-        // }
-        const freiar = this.ligado === false ? "Não é possível desacelerar um carro desligado." : this.velocidade -= 10;
+        if (this.ligado === false) {
+            console.log("Não é possível desacelerar um carro desligado.");
+        } else {
+            this.velocidade -= 10;
+        }
+        //const freiar = this.ligado === false ? "Não é possível desacelerar um carro desligado." : this.velocidade -= 10;
     },
     status: function () {
         const status = this.ligado === false ? "Desligado" : "Ligado"
@@ -59,6 +60,4 @@ carro.status();
 carro.desligar();
 carro.status();
 carro.acelerar();
-carro.status();
 carro.desacelerar();
-carro.status();
